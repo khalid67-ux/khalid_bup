@@ -32,21 +32,13 @@
 
   const state = {
     lang: "en",
-
     tender: null,
-
     requirements: [],
-
     files: [],
-
     matches: {},
-
     expiry: {},
-
     generated: false,
-
     pdfEngineReady: false,
-
     pdfEngineError: false
   };
 
@@ -84,7 +76,6 @@
       reqStart:
         "Choose the provided requirements.json file to start.",
 
-
       upload:
         "Upload PDF files",
 
@@ -106,7 +97,6 @@
       engineWait:
         "Preparing PDF engine…",
 
-
       check:
         "Document checklist",
 
@@ -121,7 +111,6 @@
 
       loadCheck:
         "Load requirements to see the checklist.",
-
 
       validation:
         "Validation center",
@@ -150,7 +139,6 @@
       progressReady:
         "Your package is ready to generate.",
 
-
       generate:
         "Generate package",
 
@@ -162,7 +150,6 @@
 
       csv:
         "Export CSV",
-
 
       save:
         "Save & reopen",
@@ -176,13 +163,11 @@
       restore:
         "Restore state",
 
-
       privacy:
         "Privacy by design",
 
       privacyText:
         "No backend, database, or upload service is used. PDFs are processed locally with browser APIs.",
-
 
       tenderId:
         "Tender ID",
@@ -214,7 +199,6 @@
       status:
         "Status",
 
-
       required:
         "Required",
 
@@ -226,7 +210,6 @@
 
       noExpiry:
         "Not required",
-
 
       missing:
         "Missing",
@@ -248,7 +231,6 @@
 
       duplicate:
         "Duplicate",
-
 
       invalidPdf:
         "Only PDF files are allowed.",
@@ -277,7 +259,6 @@
       duplicateRequirementOrder:
         "Requirement order values must be unique.",
 
-
       matchedElse:
         "This file is already matched to another requirement.",
 
@@ -289,7 +270,6 @@
 
       pdfReadFail:
         "Could not read this PDF. It may be damaged or password-protected.",
-
 
       allGood:
         "No blocking problems",
@@ -309,13 +289,11 @@
       restoreNoFiles:
         "Saved state restored. Re-select PDFs if they are no longer available.",
 
-
       chooseExpiry:
         "Enter an expiry date.",
 
       expiredMsg:
         "Expiry is before the submission deadline.",
-
 
       pages:
         "pages",
@@ -323,13 +301,11 @@
       files:
         "files",
 
-
       resetConfirm:
         "Reset the current tender, matches and uploaded files?",
 
-
       coverTitle:
-        "TENDER DOCUMENT PACKAGE",
+        "TENDER SUBMISSION PACKAGE",
 
       coverSubtitle:
         "Submission-ready document set",
@@ -339,7 +315,6 @@
 
       packageCreated:
         "Package Created",
-
 
       csvDocument:
         "Document",
@@ -355,7 +330,6 @@
 
       csvStatus:
         "Status",
-
 
       localProcessing:
         "✓ Local processing",
@@ -389,7 +363,6 @@
       reqStart:
         "শুরু করতে দেওয়া requirements.json ফাইল নির্বাচন করুন।",
 
-
       upload:
         "PDF ফাইল আপলোড",
 
@@ -411,7 +384,6 @@
       engineWait:
         "PDF engine প্রস্তুত হচ্ছে…",
 
-
       check:
         "Document checklist",
 
@@ -426,7 +398,6 @@
 
       loadCheck:
         "Checklist দেখতে requirements লোড করুন।",
-
 
       validation:
         "Validation center",
@@ -455,7 +426,6 @@
       progressReady:
         "আপনার package generate করার জন্য প্রস্তুত।",
 
-
       generate:
         "Package তৈরি করুন",
 
@@ -467,7 +437,6 @@
 
       csv:
         "CSV Export",
-
 
       save:
         "Save & reopen",
@@ -481,13 +450,11 @@
       restore:
         "Restore state",
 
-
       privacy:
         "Privacy by design",
 
       privacyText:
         "কোনো backend, database বা upload service ব্যবহার করা হয় না। PDF browser-এর মধ্যেই process হয়।",
-
 
       tenderId:
         "Tender ID",
@@ -519,7 +486,6 @@
       status:
         "Status",
 
-
       required:
         "Required",
 
@@ -531,7 +497,6 @@
 
       noExpiry:
         "প্রয়োজন নেই",
-
 
       missing:
         "Missing",
@@ -553,7 +518,6 @@
 
       duplicate:
         "Duplicate",
-
 
       invalidPdf:
         "শুধু PDF ফাইল গ্রহণযোগ্য।",
@@ -582,7 +546,6 @@
       duplicateRequirementOrder:
         "Requirement order unique হতে হবে।",
 
-
       matchedElse:
         "এই file ইতিমধ্যে অন্য requirement-এর সাথে match করা হয়েছে।",
 
@@ -594,7 +557,6 @@
 
       pdfReadFail:
         "PDF পড়া যায়নি। ফাইলটি damaged বা password-protected হতে পারে।",
-
 
       allGood:
         "কোনো blocking সমস্যা নেই",
@@ -614,13 +576,11 @@
       restoreNoFiles:
         "Saved state restore হয়েছে। PDF আর session-এ না থাকলে আবার select করুন।",
 
-
       chooseExpiry:
         "Expiry date দিন।",
 
       expiredMsg:
         "Expiry submission deadline-এর আগে।",
-
 
       pages:
         "pages",
@@ -628,13 +588,11 @@
       files:
         "files",
 
-
       resetConfirm:
         "বর্তমান tender, matches এবং uploaded files reset করবেন?",
 
-
       coverTitle:
-        "TENDER DOCUMENT PACKAGE",
+        "TENDER SUBMISSION PACKAGE",
 
       coverSubtitle:
         "Submission-ready document set",
@@ -644,7 +602,6 @@
 
       packageCreated:
         "Package Created",
-
 
       csvDocument:
         "Document",
@@ -660,7 +617,6 @@
 
       csvStatus:
         "Status",
-
 
       localProcessing:
         "✓ Local processing",
@@ -844,10 +800,6 @@
           PDFJS_WORKER_URL;
       }
 
-      /*
-       * Small functional verification.
-       * If getDocument is unavailable, the module is not usable.
-       */
       if (
         !window.pdfjsLib ||
         typeof window.pdfjsLib.getDocument !== "function"
@@ -1307,9 +1259,6 @@
       state.matches[id];
 
 
-    /*
-     * No matched file
-     */
     if (!fileId) {
 
       if (requirement.mandatory) {
@@ -1336,9 +1285,6 @@
       );
 
 
-    /*
-     * Match points to deleted file
-     */
     if (!file) {
 
       return {
@@ -1349,10 +1295,6 @@
     }
 
 
-    /*
-     * One PDF cannot be reused
-     * for different requirements.
-     */
     const reused =
       Object.entries(state.matches)
         .some(
@@ -1372,10 +1314,6 @@
     }
 
 
-    /*
-     * Duplicate content cannot
-     * be used for separate documents.
-     */
     if (
       isDuplicateFile(file) &&
       duplicateMatchedElsewhere(
@@ -1392,9 +1330,6 @@
     }
 
 
-    /*
-     * Expiry validation
-     */
     if (requirement.has_expiry) {
 
       const expiryDate =
@@ -1515,12 +1450,6 @@
 
             const status =
               statusFor(requirement);
-
-            const fileId =
-              state.matches[
-                requirement.id
-              ] || "";
-
 
             return `
 
@@ -1651,9 +1580,6 @@
     `;
 
 
-    /*
-     * File matching
-     */
     document
       .querySelectorAll("[data-match]")
       .forEach(
@@ -1677,9 +1603,6 @@
       );
 
 
-    /*
-     * Expiry dates
-     */
     document
       .querySelectorAll("[data-expiry]")
       .forEach(
@@ -1869,13 +1792,6 @@
     }
 
 
-    /*
-     * Progress
-     *
-     * Mandatory requirements matter for
-     * package readiness. Optional documents
-     * do not block generation.
-     */
     const total =
       state.requirements.length;
 
@@ -1990,11 +1906,32 @@
   ) {
 
     const steps = [
-      $("stepTender"),
-      $("stepUpload"),
-      $("stepCheck"),
-      $("stepGenerate")
+      $("stepTender") || document.querySelector(".step:nth-of-type(1)"),
+      $("stepUpload") || document.querySelector(".step:nth-of-type(3)"),
+      $("stepCheck") || document.querySelector(".step:nth-of-type(5)"),
+      $("stepGenerate") || document.querySelector(".step:nth-of-type(7)")
     ];
+
+    const actualSteps =
+      document.querySelectorAll(".step");
+
+    if (actualSteps.length >= 4) {
+      steps[0] =
+        $("stepTender") ||
+        actualSteps[0];
+
+      steps[1] =
+        $("stepUpload") ||
+        actualSteps[1];
+
+      steps[2] =
+        $("stepCheck") ||
+        actualSteps[2];
+
+      steps[3] =
+        $("stepGenerate") ||
+        actualSteps[3];
+    }
 
 
     steps.forEach(
@@ -2245,8 +2182,21 @@
       if (!file) return;
 
 
+      const isJson =
+        file.type === "application/json" ||
+        file.name.toLowerCase().endsWith(".json");
+
+      if (!isJson) {
+        throw new Error("requirements-invalid");
+      }
+
+
       const text =
         await file.text();
+
+      if (!text.trim()) {
+        throw new Error("requirements-invalid");
+      }
 
 
       const data =
@@ -2258,11 +2208,6 @@
       );
 
 
-      /*
-       * New tender configuration means
-       * old matching/expiry data must not
-       * remain.
-       */
       state.tender =
         data.tender;
 
@@ -2282,10 +2227,6 @@
       state.generated = false;
 
 
-      /*
-       * Keep already uploaded PDFs,
-       * but do not keep old matches.
-       */
       state.files =
         state.files.map(
           (file) => ({
@@ -2438,9 +2379,6 @@
       const file of incoming
     ) {
 
-      /*
-       * PDF validation
-       */
       const isPdf =
         file.type ===
           "application/pdf" ||
@@ -2459,9 +2397,6 @@
       }
 
 
-      /*
-       * Size validation
-       */
       if (
         totalSize +
         file.size >
@@ -2478,10 +2413,6 @@
 
       try {
 
-        /*
-         * Read PDF and calculate SHA-256
-         * concurrently.
-         */
         const [
           pages,
           hash
@@ -2491,10 +2422,6 @@
         ]);
 
 
-        /*
-         * Duplicate detection is based
-         * on exact byte content.
-         */
         const duplicate =
           state.files.some(
             (existing) =>
@@ -2508,17 +2435,11 @@
 
         state.files.push({
           id,
-
           name: file.name,
-
           size: file.size,
-
           pages,
-
           hash,
-
           duplicate,
-
           blob: file
         });
 
@@ -2543,14 +2464,6 @@
     }
 
 
-    /*
-     * Recalculate duplicate status
-     * for ALL files.
-     *
-     * This fixes the case where the first
-     * uploaded copy was not initially marked
-     * duplicate.
-     */
     state.files =
       state.files.map(
         (file) => ({
@@ -2590,10 +2503,6 @@
 
   function removeFile(id) {
 
-    /*
-     * Remove matches pointing to
-     * the deleted file.
-     */
     Object.keys(
       state.matches
     ).forEach(
@@ -2622,9 +2531,6 @@
       );
 
 
-    /*
-     * Recalculate duplicates.
-     */
     state.files =
       state.files.map(
         (file) => ({
@@ -2662,9 +2568,6 @@
     }
 
 
-    /*
-     * One-to-one requirement mapping.
-     */
     const alreadyUsed =
       Object.entries(
         state.matches
@@ -2709,10 +2612,6 @@
     }
 
 
-    /*
-     * Duplicate content may not be
-     * used for two different requirements.
-     */
     if (
       isDuplicateFile(file) &&
       duplicateMatchedElsewhere(
@@ -2752,7 +2651,8 @@
     pdf,
     pageW,
     pageH,
-    documents
+    documents,
+    fonts
   ) {
 
     const page =
@@ -2760,7 +2660,6 @@
         pageW,
         pageH
       ]);
-
 
     const {
       width,
@@ -2775,14 +2674,12 @@
         0.16
       );
 
-
     const purple =
       PDFLib.rgb(
         0.36,
         0.29,
         1
       );
-
 
     const white =
       PDFLib.rgb(
@@ -2791,14 +2688,12 @@
         1
       );
 
-
     const muted =
       PDFLib.rgb(
         0.72,
         0.75,
         0.90
       );
-
 
     const labelColor =
       PDFLib.rgb(
@@ -2807,10 +2702,21 @@
         0.75
       );
 
+    const soft =
+      PDFLib.rgb(
+        0.12,
+        0.14,
+        0.24
+      );
 
-    /*
-     * Background
-     */
+
+    const bold =
+      fonts.bold;
+
+    const regular =
+      fonts.regular;
+
+
     page.drawRectangle({
       x: 0,
       y: 0,
@@ -2820,9 +2726,6 @@
     });
 
 
-    /*
-     * Top accent
-     */
     page.drawRectangle({
       x: 0,
       y: height - 8,
@@ -2832,180 +2735,298 @@
     });
 
 
-    /*
-     * Title
-     */
     page.drawText(
-      L().coverTitle,
+      "TENDER SUBMISSION PACKAGE",
       {
-        x: 48,
-        y: height - 80,
-        size: 25,
+        x: 42,
+        y: height - 72,
+        size: 24,
         color: white,
-        font:
-          PDFLib.StandardFonts
-            .HelveticaBold
+        font: bold
       }
     );
 
 
     page.drawText(
-      L().coverSubtitle,
+      "Submission-ready document set",
       {
-        x: 48,
-        y: height - 103,
+        x: 42,
+        y: height - 96,
         size: 10,
         color: muted,
-        font:
-          PDFLib.StandardFonts
-            .Helvetica
+        font: regular
       }
     );
 
 
-    /*
-     * Tender information
-     */
-    const items = [
+    const tenderItems = [
 
       [
-        L().tenderId,
+        "TENDER ID",
         state.tender.tender_id
       ],
 
       [
-        L().title,
+        "TENDER TITLE",
         state.tender.title
       ],
 
       [
-        L().entity,
-        state.tender.procuring_entity
-      ],
-
-      [
-        L().bidder,
+        "BIDDER",
         state.tender.bidder
       ],
 
       [
-        L().deadline,
+        "PROCURING ENTITY",
+        state.tender.procuring_entity
+      ],
+
+      [
+        "SUBMISSION DEADLINE",
         state.tender.submission_deadline
       ],
 
       [
-        L().packageCreated,
+        "GENERATED DATE",
         formatToday()
       ]
 
     ];
 
 
-    let y =
-      height - 155;
+    let infoY =
+      height - 140;
 
 
-    for (
-      const [label, value]
-      of items
-    ) {
-
-      page.drawText(
-        String(label)
-          .toUpperCase(),
-        {
-          x: 48,
-          y,
-          size: 8,
-          color: labelColor,
-          font:
-            PDFLib.StandardFonts
-              .HelveticaBold
-        }
-      );
-
-
-      page.drawText(
-        String(value || "—"),
-        {
-          x: 48,
-          y: y - 17,
-          size: 12,
-          color: white,
-          font:
-            PDFLib.StandardFonts
-              .Helvetica
-        }
-      );
-
-
-      y -= 52;
-    }
-
-
-    /*
-     * Included documents
-     *
-     * IMPORTANT:
-     * Always English document titles.
-     */
-    page.drawText(
-      L().includedDocuments,
-      {
-        x: 330,
-        y: height - 155,
-        size: 9,
-        color: labelColor,
-        font:
-          PDFLib.StandardFonts
-            .HelveticaBold
-      }
-    );
-
-
-    let includedY =
-      height - 182;
-
-
-    documents.forEach(
-      (document, index) => {
+    tenderItems.forEach(
+      ([label, value]) => {
 
         page.drawText(
-          `${index + 1}. ${document.title}`,
+          label,
           {
-            x: 330,
-            y: includedY,
-            size: 10,
-            color:
-              PDFLib.rgb(
-                0.94,
-                0.95,
-                1
-              ),
-            font:
-              PDFLib.StandardFonts
-                .Helvetica
+            x: 42,
+            y: infoY,
+            size: 7.5,
+            color: labelColor,
+            font: bold
           }
         );
 
 
-        includedY -= 22;
+        page.drawText(
+          String(value || "—"),
+          {
+            x: 42,
+            y: infoY - 14,
+            size: 10.5,
+            color: white,
+            font: regular,
+            maxWidth: 500
+          }
+        );
+
+
+        infoY -= 39;
 
       }
     );
 
 
-    /*
-     * Footer is overwritten with final
-     * page total after all pages are added.
-     */
+    const tableTop = 430;
+
+    const tableLeft = 42;
+
+    const tableRight =
+      width - 42;
+
+    const tableWidth =
+      tableRight - tableLeft;
+
+    const headerH = 24;
+
+    const rowH = 25;
+
+
+    page.drawText(
+      "DOCUMENT INDEX",
+      {
+        x: tableLeft,
+        y: tableTop + 24,
+        size: 9,
+        color: labelColor,
+        font: bold
+      }
+    );
+
+
     page.drawRectangle({
-      x: 0,
-      y: 0,
-      width,
-      height: FOOTER_HEIGHT,
-      color: dark
+      x: tableLeft,
+      y: tableTop - headerH,
+      width: tableWidth,
+      height: headerH,
+      color: purple
     });
+
+
+    const cols = [
+
+      {
+        label: "ORDER",
+        x: tableLeft + 8,
+        width: 42
+      },
+
+      {
+        label: "REQUIREMENT",
+        x: tableLeft + 50,
+        width: 185
+      },
+
+      {
+        label: "FILENAME",
+        x: tableLeft + 235,
+        width: 220
+      },
+
+      {
+        label: "PAGES",
+        x: tableLeft + 455,
+        width: 70
+      }
+
+    ];
+
+
+    cols.forEach(
+      (col) => {
+
+        page.drawText(
+          col.label,
+          {
+            x: col.x,
+            y: tableTop - 16,
+            size: 7,
+            color: white,
+            font: bold
+          }
+        );
+
+      }
+    );
+
+
+    documents.forEach(
+      (
+        document,
+        index
+      ) => {
+
+        const y =
+          tableTop -
+          headerH -
+          ((index + 1) * rowH);
+
+
+        if (index % 2 === 0) {
+
+          page.drawRectangle({
+            x: tableLeft,
+            y,
+            width: tableWidth,
+            height: rowH,
+            color: soft
+          });
+
+        }
+
+
+        const values = [
+
+          String(
+            document.order ??
+            index + 1
+          ),
+
+          String(
+            document.title || ""
+          ),
+
+          String(
+            document.filename || ""
+          ),
+
+          String(
+            document.pageRange ||
+            document.pages ||
+            ""
+          )
+
+        ];
+
+
+        const positions = [
+
+          tableLeft + 8,
+
+          tableLeft + 50,
+
+          tableLeft + 235,
+
+          tableLeft + 455
+
+        ];
+
+
+        values.forEach(
+          (
+            value,
+            valueIndex
+          ) => {
+
+            page.drawText(
+              value,
+              {
+                x:
+                  positions[
+                    valueIndex
+                  ],
+
+                y:
+                  y + 8,
+
+                size: 7.5,
+
+                color: white,
+
+                font: regular,
+
+                maxWidth:
+                  valueIndex === 1
+                    ? 178
+                    : valueIndex === 2
+                      ? 212
+                      : 60
+              }
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    page.drawText(
+      "All documents are included in the supplied requirement order. Page numbering is applied to every output page.",
+      {
+        x: tableLeft,
+        y: 45,
+        size: 7.5,
+        color: muted,
+        font: regular,
+        maxWidth: tableWidth
+      }
+    );
 
 
     return page;
@@ -3019,7 +3040,8 @@
   function drawFooter(
     page,
     pageNumber,
-    totalPages
+    totalPages,
+    footerFont
   ) {
 
     const width =
@@ -3029,9 +3051,6 @@
       page.getHeight();
 
 
-    /*
-     * Reserved footer band.
-     */
     page.drawRectangle({
       x: 0,
       y: 0,
@@ -3061,9 +3080,7 @@
             0.84
           ),
 
-        font:
-          PDFLib.StandardFonts
-            .Helvetica
+        font: footerFont
       }
     );
 
@@ -3078,9 +3095,6 @@
 
     try {
 
-      /*
-       * Final safety validation before generation.
-       */
       if (!state.tender) {
 
         toast(
@@ -3103,12 +3117,26 @@
       }
 
 
+      if (
+        !window.PDFLib ||
+        !window.PDFLib.PDFDocument
+      ) {
+
+        throw new Error(
+          "pdf-lib is unavailable."
+        );
+
+      }
+
+
       const rows =
         state.requirements.map(
           (requirement) => ({
             requirement,
             status:
-              statusFor(requirement)
+              statusFor(
+                requirement
+              )
           })
         );
 
@@ -3120,7 +3148,9 @@
         );
 
 
-      if (blocking.length > 0) {
+      if (
+        blocking.length > 0
+      ) {
 
         toast(
           L().notReady,
@@ -3133,45 +3163,6 @@
       }
 
 
-      /*
-       * Every mandatory requirement
-       * must have a match.
-       */
-      const missingMandatory =
-        state.requirements.some(
-          (requirement) =>
-            requirement.mandatory &&
-            !state.matches[
-              requirement.id
-            ]
-        );
-
-
-      if (missingMandatory) {
-
-        toast(
-          L().notReady,
-          "error"
-        );
-
-        renderAll();
-
-        return;
-      }
-
-
-      const PDFDocument =
-        PDFLib.PDFDocument;
-
-
-      const pdf =
-        await PDFDocument.create();
-
-
-      /*
-       * Requirements must be ordered
-       * by the supplied "order" field.
-       */
       const orderedRequirements =
         [...state.requirements]
           .sort(
@@ -3187,6 +3178,150 @@
           );
 
 
+      if (
+        orderedRequirements.length === 0
+      ) {
+
+        toast(
+          L().notReady,
+          "error"
+        );
+
+        return;
+      }
+
+
+      /*
+       * Cover is page 1.
+       */
+      let nextOutputPage = 2;
+
+
+      const documentIndex =
+        orderedRequirements.map(
+          (requirement) => {
+
+            const file =
+              state.files.find(
+                (item) =>
+                  item.id ===
+                  state.matches[
+                    requirement.id
+                  ]
+              );
+
+
+            if (!file) {
+
+              throw new Error(
+                `Matched file not found for requirement ${requirement.id}.`
+              );
+
+            }
+
+
+            const pageCount =
+              Number(
+                file.pages
+              );
+
+
+            if (
+              !Number.isInteger(
+                pageCount
+              ) ||
+              pageCount < 1
+            ) {
+
+              throw new Error(
+                `Invalid page count for ${file.name}.`
+              );
+
+            }
+
+
+            const startPage =
+              nextOutputPage;
+
+
+            const endPage =
+              startPage +
+              pageCount -
+              1;
+
+
+            nextOutputPage =
+              endPage + 1;
+
+
+            return {
+
+              order:
+                requirement.order,
+
+              title:
+                reqEnglishTitle(
+                  requirement
+                ),
+
+              filename:
+                file.name,
+
+              pages:
+                pageCount,
+
+              pageRange:
+                pageCount === 1
+                  ? String(
+                      startPage
+                    )
+                  : `${startPage}-${endPage}`,
+
+              file
+
+            };
+
+          }
+        );
+
+
+      const PDFDocument =
+        window.PDFLib.PDFDocument;
+
+
+      const pdf =
+        await PDFDocument.create();
+
+
+      /*
+       * IMPORTANT FIX:
+       *
+       * drawText() requires an actual PDFFont
+       * object, not a StandardFonts string.
+       */
+      const regularFont =
+        await pdf.embedFont(
+          PDFLib.StandardFonts.Helvetica
+        );
+
+
+      const boldFont =
+        await pdf.embedFont(
+          PDFLib.StandardFonts.HelveticaBold
+        );
+
+
+      const fonts = {
+
+        regular:
+          regularFont,
+
+        bold:
+          boldFont
+
+      };
+
+
       /*
        * English-only cover page.
        */
@@ -3194,183 +3329,218 @@
         pdf,
         595.28,
         841.89,
-
-        orderedRequirements.map(
-          (requirement) => ({
-            title:
-              reqEnglishTitle(
-                requirement
-              )
-          })
-        )
+        documentIndex,
+        fonts
       );
 
 
       /*
-       * Import every matched PDF.
+       * Import source PDFs.
        *
-       * Original document pages are retained.
+       * IMPORTANT:
+       * Do NOT use copyPages() followed by
+       * embedPage() on the copied page.
+       *
+       * embedPage() receives the original
+       * page from the source document.
        */
-      const importedPages = [];
-
-
       for (
-        const requirement
-        of orderedRequirements
+        const document
+        of documentIndex
       ) {
 
         const file =
-          state.files.find(
-            (item) =>
-              item.id ===
-              state.matches[
-                requirement.id
-              ]
-          );
-
-
-        if (!file) {
-          continue;
-        }
+          document.file;
 
 
         const sourceBytes =
           await file.blob.arrayBuffer();
 
 
-        const source =
-          await PDFDocument.load(
-            sourceBytes,
+        let source;
+
+
+        try {
+
+          source =
+            await PDFDocument.load(
+              sourceBytes,
+              {
+                ignoreEncryption:
+                  false,
+
+                updateMetadata:
+                  false
+              }
+            );
+
+        } catch (
+          sourceError
+        ) {
+
+          console.error(
+            `Could not load source PDF "${file.name}":`,
+            sourceError
+          );
+
+
+          throw new Error(
+            `Could not import "${file.name}". The PDF may be damaged, encrypted, or unsupported.`
+          );
+
+        }
+
+
+        const sourcePageCount =
+          source.getPageCount();
+
+
+        if (
+          sourcePageCount !==
+          Number(file.pages)
+        ) {
+
+          throw new Error(
+            `Page count changed for "${file.name}". Please remove and re-upload the PDF.`
+          );
+
+        }
+
+
+        for (
+          let pageIndex = 0;
+          pageIndex <
+            sourcePageCount;
+          pageIndex++
+        ) {
+
+          const sourcePage =
+            source.getPage(
+              pageIndex
+            );
+
+
+          const sourceWidth =
+            sourcePage.getWidth();
+
+
+          const sourceHeight =
+            sourcePage.getHeight();
+
+
+          if (
+            !Number.isFinite(
+              sourceWidth
+            ) ||
+
+            !Number.isFinite(
+              sourceHeight
+            ) ||
+
+            sourceWidth <= 0 ||
+
+            sourceHeight <= 0
+          ) {
+
+            throw new Error(
+              `Invalid page size in "${file.name}" page ${pageIndex + 1}.`
+            );
+
+          }
+
+
+          /*
+           * Preserve original page dimensions.
+           */
+          const outputPage =
+            pdf.addPage([
+              sourceWidth,
+              sourceHeight
+            ]);
+
+
+          /*
+           * Embed original source page.
+           */
+          const embedded =
+            await pdf.embedPage(
+              sourcePage
+            );
+
+
+          /*
+           * Reserve footer area.
+           */
+          const availableHeight =
+            Math.max(
+              1,
+              sourceHeight -
+                FOOTER_HEIGHT
+            );
+
+
+          /*
+           * Do not enlarge original content.
+           */
+          const scale =
+            Math.min(
+              1,
+              availableHeight /
+                sourceHeight
+            );
+
+
+          const drawWidth =
+            sourceWidth *
+            scale;
+
+
+          const drawHeight =
+            sourceHeight *
+            scale;
+
+
+          const x =
+            (
+              sourceWidth -
+              drawWidth
+            ) / 2;
+
+
+          const y =
+            FOOTER_HEIGHT +
+            Math.max(
+              0,
+              (
+                availableHeight -
+                drawHeight
+              ) / 2
+            );
+
+
+          outputPage.drawPage(
+            embedded,
             {
-              ignoreEncryption: false
+              x,
+
+              y,
+
+              width:
+                drawWidth,
+
+              height:
+                drawHeight
             }
           );
 
-
-        const sourcePages =
-          await pdf.copyPages(
-            source,
-            source.getPageIndices()
-          );
-
-
-        sourcePages.forEach(
-          (page) => {
-
-            importedPages.push({
-              page,
-              source: file.name,
-              title:
-                reqEnglishTitle(
-                  requirement
-                )
-            });
-
-          }
-        );
+        }
 
       }
 
 
       /*
-       * Add imported pages while reserving
-       * footer space.
-       *
-       * The source page content is scaled
-       * proportionally so the footer never
-       * overlays imported content.
-       */
-      for (
-        const item
-        of importedPages
-      ) {
-
-        const sourcePage =
-          item.page;
-
-
-        const sourceWidth =
-          sourcePage.getWidth();
-
-        const sourceHeight =
-          sourcePage.getHeight();
-
-
-        const outputPage =
-          pdf.addPage([
-            sourceWidth,
-            sourceHeight
-          ]);
-
-
-        const embedded =
-          await pdf.embedPage(
-            sourcePage
-          );
-
-
-        /*
-         * Keep aspect ratio.
-         */
-        const availableHeight =
-          Math.max(
-            1,
-            sourceHeight -
-              FOOTER_HEIGHT
-          );
-
-
-        const scale =
-          Math.min(
-            1,
-            sourceWidth /
-              sourceWidth,
-
-            availableHeight /
-              sourceHeight
-          );
-
-
-        const drawWidth =
-          sourceWidth *
-          scale;
-
-        const drawHeight =
-          sourceHeight *
-          scale;
-
-
-        const x =
-          (sourceWidth -
-            drawWidth) /
-          2;
-
-
-        const y =
-          FOOTER_HEIGHT +
-          (availableHeight -
-            drawHeight);
-
-
-        outputPage.drawPage(
-          embedded,
-          {
-            x,
-            y,
-            width: drawWidth,
-            height: drawHeight
-          }
-        );
-
-      }
-
-
-      /*
-       * IMPORTANT:
-       *
-       * Total page count is calculated
-       * AFTER cover + imported pages
-       * have all been added.
+       * Add footer after every page has been created,
+       * so the final total page count is known.
        */
       const totalPages =
         pdf.getPageCount();
@@ -3380,16 +3550,31 @@
         pdf.getPages();
 
 
-      /*
-       * Final footer on EVERY page.
-       */
+      if (
+        totalPages < 2
+      ) {
+
+        throw new Error(
+          "No document pages were added to the package."
+        );
+
+      }
+
+
       pages.forEach(
-        (page, index) => {
+        (
+          page,
+          index
+        ) => {
 
           drawFooter(
             page,
+
             index + 1,
-            totalPages
+
+            totalPages,
+
+            regularFont
           );
 
         }
@@ -3397,7 +3582,7 @@
 
 
       /*
-       * Save generated PDF.
+       * Generate Blob.
        */
       const bytes =
         await pdf.save();
@@ -3425,10 +3610,26 @@
         );
 
 
-      anchor.href = url;
+      anchor.href =
+        url;
+
+
+      /*
+       * Required filename:
+       * <tender_id>_Package.pdf
+       */
+      const safeTenderId =
+        String(
+          state.tender.tender_id ||
+          "Tender"
+        ).replace(
+          /[<>:"/\\|?*\x00-\x1F]/g,
+          "_"
+        );
+
 
       anchor.download =
-        `${state.tender.tender_id}_Package.pdf`;
+        `${safeTenderId}_Package.pdf`;
 
 
       document.body.appendChild(
@@ -3444,12 +3645,15 @@
 
       setTimeout(
         () =>
-          URL.revokeObjectURL(url),
+          URL.revokeObjectURL(
+            url
+          ),
         5000
       );
 
 
-      state.generated = true;
+      state.generated =
+        true;
 
 
       toast(
@@ -3458,7 +3662,9 @@
       );
 
 
-    } catch (error) {
+    } catch (
+      error
+    ) {
 
       console.error(
         "Package generation failed:",
@@ -3466,8 +3672,14 @@
       );
 
 
+      const detail =
+        error?.message
+          ? ` ${error.message}`
+          : "";
+
+
       toast(
-        L().genFail,
+        `${L().genFail}${detail}`,
         "error"
       );
 
@@ -3593,7 +3805,8 @@
       );
 
 
-    anchor.href = url;
+    anchor.href =
+      url;
 
 
     anchor.download =
@@ -3631,9 +3844,6 @@
       /*
        * File blobs cannot safely be serialized
        * into localStorage.
-       *
-       * Therefore metadata and matching state
-       * are saved here.
        */
       const data = {
 
@@ -3746,11 +3956,8 @@
 
 
       /*
-       * Validate restored matches against
-       * currently available files.
-       *
-       * Since localStorage does not preserve
-       * File objects, stale file matches
+       * localStorage cannot preserve
+       * File objects, so stale file IDs
        * are removed.
        */
       const validFileIds =
@@ -3890,18 +4097,71 @@
      */
     $("requirementsInput")?.addEventListener(
       "change",
-      (event) => {
+      async (event) => {
 
         const file =
-          event.target.files?.[0];
+          event.target.files?.[0] ||
+          null;
 
 
-        if (file) {
-          loadRequirements(file);
+        if (!file) return;
+
+
+        try {
+
+          await loadRequirements(
+            file
+          );
+
+        } catch (error) {
+
+          console.error(
+            "requirements.json load failed:",
+            error
+          );
+
+          toast(
+            L().badReq,
+            "error"
+          );
+
+        } finally {
+
+          event.target.value = "";
+
         }
 
+      }
+    );
 
-        event.target.value = "";
+
+    /*
+     * Requirements JSON fallback.
+     */
+    const reqInput =
+      $("requirementsInput");
+
+    const reqLabel =
+      reqInput?.closest(
+        "label.file-btn"
+      );
+
+
+    reqLabel?.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target ===
+          reqInput
+        ) {
+          return;
+        }
+
+        /*
+         * Native label behaviour
+         * opens the file picker.
+         */
 
       }
     );
@@ -3928,7 +4188,10 @@
     /*
      * Drag enter / over
      */
-    ["dragenter", "dragover"]
+    [
+      "dragenter",
+      "dragover"
+    ]
       .forEach(
         (eventName) => {
 
@@ -3955,7 +4218,10 @@
     /*
      * Drag leave
      */
-    ["dragleave", "drop"]
+    [
+      "dragleave",
+      "drop"
+    ]
       .forEach(
         (eventName) => {
 
@@ -3990,8 +4256,14 @@
           event.dataTransfer?.files;
 
 
-        if (files?.length) {
-          addFiles(files);
+        if (
+          files?.length
+        ) {
+
+          addFiles(
+            files
+          );
+
         }
 
       }
@@ -4073,11 +4345,9 @@
 
     applyLang();
 
+
     /*
      * PDF.js loads independently.
-     * The application remains usable while
-     * the engine is loading, but PDF upload
-     * is disabled until it is ready.
      */
     loadPdfJs();
 

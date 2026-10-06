@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Tender Package Builder — browser-only tender document validation and PDF package generator."
+  >
+
+  <meta name="theme-color" content="#5b4bff">
+
+  <title>Tender Package Builder</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Application stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       GLOBAL TOAST / NOTIFICATION AREA
+  ========================================================== -->
+  <div
+    id="toastRoot"
+    class="toast-root"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+  <header class="topbar">
+
+    <div class="brand">
+      <div
+        class="brand-mark"
+        aria-hidden="true"
+      >
+        TP
+      </div>
+
+      <div class="brand-copy">
+        <strong id="brandTitle">
+          Tender Package Builder
+        </strong>
+
+        <span id="brandSubtitle">
+          Browser-only document preparation
+        </span>
+      </div>
+    </div>
+
+
+    <div class="top-actions">
+
+      <!-- Browser-only privacy indicator -->
+      <span
+        id="privacyBadge"
+        class="privacy-badge"
+        title="Tender documents are processed locally in your browser"
+      >
+        🔒 Files stay in your browser
+      </span>
+
+
+      <!-- PDF engine status -->
+      <span
+        id="pdfEngineStatus"
+        class="engine-status loading"
+        aria-live="polite"
+      >
+        <span
+          class="engine-dot"
+          aria-hidden="true"
+        ></span>
+
+        <span id="pdfEngineStatusText">
+          PDF engine loading…
+        </span>
+      </span>
+
+
+      <!-- Language switch -->
+      <button
+        id="langBtn"
+        class="btn btn-ghost"
+        type="button"
+        aria-label="Switch language"
+      >
+        বাংলা
+      </button>
+
+
+      <!-- Reset -->
+      <button
+        id="resetBtn"
+        class="btn btn-ghost"
+        type="button"
+      >
+        Reset
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       MAIN APPLICATION
+  ========================================================== -->
+  <main class="shell">
+
+
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+    <section
+      class="hero"
+      aria-labelledby="appTitle"
+    >
+
+      <div class="hero-copy">
+
+        <div
+          id="heroEyebrow"
+          class="eyebrow"
+        >
+          AI DEVFEST • TENDER WORKFLOW
+        </div>
+
+        <h1 id="appTitle">
+          Build a complete, checked tender PDF package.
+        </h1>
+
+        <p id="appSubtitle">
+          Load requirements, upload PDFs, match documents,
+          validate expiry dates, resolve duplicates, then
+          generate one submission-ready package.
+        </p>
+
+      </div>
+
+
+      <!-- Progress -->
+      <div
+        class="hero-stat"
+        aria-label="Package readiness"
+      >
+
+        <span id="progressLabel">
+          0% ready
+        </span>
+
+        <div
+          class="progress"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          aria-label="Package readiness progress"
+        >
+          <div id="progressBar"></div>
+        </div>
+
+        <small
+          id="progressHint"
+          class="progress-hint"
+        >
+          Load requirements to begin.
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         WORKFLOW STEPPER
+    ======================================================== -->
+    <section
+      class="stepper"
+      aria-label="Tender package workflow"
+    >
+
+      <div
+        id="stepTender"
+        class="step active"
+      >
+        <b>1</b>
+        <span id="step1">Tender</span>
+      </div>
+
+      <div class="line"></div>
+
+      <div
+        id="stepUpload"
+        class="step"
+      >
+        <b>2</b>
+        <span id="step2">Upload</span>
+      </div>
+
+      <div class="line"></div>
+
+      <div
+        id="stepCheck"
+        class="step"
+      >
+        <b>3</b>
+        <span id="step3">Match &amp; check</span>
+      </div>
+
+      <div class="line"></div>
+
+      <div
+        id="stepGenerate"
+        class="step"
+      >
+        <b>4</b>
+        <span id="step4">Generate</span>
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         TOP TWO CARDS
+    ======================================================== -->
+    <section class="grid-2">
+
+
+      <!-- =====================================================
+           01 — TENDER REQUIREMENTS
+      ====================================================== -->
+      <article class="card">
+
+        <div class="card-head">
+
+          <div>
+            <span class="section-kicker">
+              01
+            </span>
+
+            <h2 id="requirementsHeading">
+              Tender requirements
+            </h2>
+          </div>
+
+
+          <!-- Requirements JSON uploader -->
+          <label
+            class="btn btn-primary file-btn"
+            for="requirementsInput"
+          >
+
+            <input
+              id="requirementsInput"
+              type="file"
+              accept=".json,application/json"
+              aria-label="Load requirements JSON"
+            >
+
+            <span id="loadReqText">
+              Load requirements.json
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <!-- Empty state -->
+        <div
+          id="tenderSummary"
+          class="empty-state"
+        >
+
+          <div
+            class="empty-icon"
+            aria-hidden="true"
+          >
+            ⌁
+          </div>
+
+          <h3 id="reqEmptyTitle">
+            No tender loaded
+          </h3>
+
+          <p id="reqEmptyText">
+            Choose the provided requirements.json file to start.
+          </p>
+
+        </div>
+
+
+        <!-- Loaded tender information -->
+        <div
+          id="tenderInfo"
+          class="hidden"
+        ></div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           02 — PDF UPLOAD
+      ====================================================== -->
+      <article class="card">
+
+        <div class="card-head">
+
+          <div>
+            <span class="section-kicker">
+              02
+            </span>
+
+            <h2 id="uploadHeading">
+              Upload PDF files
+            </h2>
+          </div>
+
+
+          <span
+            id="fileCount"
+            class="pill"
+            aria-label="Uploaded PDF count"
+          >
+            0 / 30
+          </span>
+
+        </div>
+
+
+        <!-- PDF Dropzone -->
+        <label
+          id="dropzone"
+          class="dropzone"
+          for="pdfInput"
+        >
+
+          <input
+            id="pdfInput"
+            type="file"
+            accept="application/pdf,.pdf"
+            multiple
+            aria-label="Upload PDF documents"
+          >
+
+          <div
+            class="upload-icon"
+            aria-hidden="true"
+          >
+            ↑
+          </div>
+
+          <strong id="dropTitle">
+            Drop PDFs here or click to browse
+          </strong>
+
+          <span id="dropHint">
+            PDF only • up to 30 files • 50 MB total
+          </span>
+
+          <span
+            id="dropEngineHint"
+            class="drop-engine-hint"
+          >
+            PDF engine is preparing…
+          </span>
+
+        </label>
+
+
+        <!-- Upload validation errors -->
+        <div
+          id="uploadErrors"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- Uploaded files -->
+        <div
+          id="fileList"
+          class="file-list"
+          aria-live="polite"
+        ></div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =======================================================
+         03 — DOCUMENT CHECKLIST
+    ======================================================== -->
+    <section class="card">
+
+      <div class="card-head">
+
+        <div>
+          <span class="section-kicker">
+            03
+          </span>
+
+          <h2 id="checkHeading">
+            Document checklist
+          </h2>
+        </div>
+
+
+        <!-- Status legend -->
+        <div
+          class="legend"
+          aria-label="Document status legend"
+        >
+
+          <span>
+            <i
+              class="dot green"
+              aria-hidden="true"
+            ></i>
+
+            <span id="legendOk">
+              OK
+            </span>
+          </span>
+
+
+          <span>
+            <i
+              class="dot red"
+              aria-hidden="true"
+            ></i>
+
+            <span id="legendBlock">
+              Blocking
+            </span>
+          </span>
+
+
+          <span>
+            <i
+              class="dot gray"
+              aria-hidden="true"
+            ></i>
+
+            <span id="legendOptional">
+              Optional
+            </span>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- Dynamic requirement table -->
+      <div
+        id="requirementsTable"
+        class="table-wrap"
+        aria-live="polite"
+      >
+
+        <div class="empty-state compact">
+
+          <div
+            class="empty-icon"
+            aria-hidden="true"
+          >
+            ✓
+          </div>
+
+          <p id="checkEmpty">
+            Load requirements to see the checklist.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         04 — VALIDATION CENTER
+    ======================================================== -->
+    <section class="card validation-card">
+
+      <div class="card-head">
+
+        <div>
+          <span class="section-kicker">
+            04
+          </span>
+
+          <h2 id="validationHeading">
+            Validation center
+          </h2>
+        </div>
+
+
+        <span
+          id="blockingPill"
+          class="status-pill danger"
+          aria-live="polite"
+        >
+          0 blocking
+        </span>
+
+      </div>
+
+
+      <!-- Dynamic validation messages -->
+      <div
+        id="validationList"
+        class="validation-list"
+        aria-live="polite"
+      ></div>
+
+
+      <!-- Generate area -->
+      <div class="generate-row">
+
+        <div>
+
+          <strong id="readyTitle">
+            Package readiness
+          </strong>
+
+          <p id="readyText">
+            Resolve all blocking issues before generating.
+          </p>
+
+        </div>
+
+
+        <button
+          id="generateBtn"
+          class="btn btn-generate"
+          type="button"
+          disabled
+        >
+          Generate package
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         BONUS FEATURES
+    ======================================================== -->
+    <section class="bonus-grid">
+
+
+      <!-- =====================================================
+           BONUS — CSV EXPORT
+      ====================================================== -->
+      <article class="card">
+
+        <div class="card-head">
+
+          <div>
+            <span class="section-kicker">
+              BONUS
+            </span>
+
+            <h2 id="exportHeading">
+              Checklist export
+            </h2>
+          </div>
+
+        </div>
+
+        <p id="exportText">
+          Export the current checklist as CSV for office records.
+        </p>
+
+        <button
+          id="csvBtn"
+          class="btn btn-secondary"
+          type="button"
+          disabled
+        >
+          Export CSV
+        </button>
+
+      </article>
+
+
+      <!-- =====================================================
+           BONUS — SAVE / RESTORE
+      ====================================================== -->
+      <article class="card">
+
+        <div class="card-head">
+
+          <div>
+            <span class="section-kicker">
+              BONUS
+            </span>
+
+            <h2 id="saveHeading">
+              Save &amp; reopen
+            </h2>
+          </div>
+
+        </div>
+
+        <p id="saveText">
+          Save your project locally in this browser.
+          No server is used.
+        </p>
+
+        <div class="button-row">
+
+          <button
+            id="saveBtn"
+            class="btn btn-secondary"
+            type="button"
+          >
+            Save state
+          </button>
+
+          <button
+            id="restoreBtn"
+            class="btn btn-ghost"
+            type="button"
+          >
+            Restore state
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- =====================================================
+           BONUS — PRIVACY
+      ====================================================== -->
+      <article class="card">
+
+        <div class="card-head">
+
+          <div>
+            <span class="section-kicker">
+              BONUS
+            </span>
+
+            <h2 id="privacyHeading">
+              Privacy by design
+            </h2>
+          </div>
+
+        </div>
+
+        <p id="privacyText">
+          No backend, database, or upload service is used.
+          PDFs are processed locally with browser APIs.
+        </p>
+
+        <div class="mini-checks">
+
+          <span id="privacyLocal">
+            ✓ Local processing
+          </span>
+
+          <span id="privacyHash">
+            ✓ SHA-256 duplicate check
+          </span>
+
+          <span id="privacyLogin">
+            ✓ No login
+          </span>
+
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="footer">
+
+    <span id="footerLeft">
+      Frontend-only • Tender Package Builder
+    </span>
+
+    <span id="footerRight">
+      Designed for latest Google Chrome
+    </span>
+
+  </footer>
+
+
+  <!-- =========================================================
+       LIBRARIES
+       
+       IMPORTANT:
+       Do not load pdf.js here with a normal <script>.
+       app.js handles PDF.js loading dynamically and safely.
+       
+       pdf-lib exposes window.PDFLib and is used for browser-side
+       PDF creation/merging.
+  ========================================================== -->
+
+  <script
+    src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"
+  ></script>
+
+
+  <!-- =========================================================
+       APPLICATION JAVASCRIPT
+  ========================================================== -->
+  <script
+    src="js/app.js"
+    defer
+  ></script>
+
+</body>
+</html>
